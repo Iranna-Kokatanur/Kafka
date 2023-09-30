@@ -1,0 +1,57 @@
+Open Source: Apache Kafka  --> Kafka.apache.org
+
+Commercial Distribution: Confluent kafka --> confluent.io
+
+Managed Kafka Service : Confluent and AWS
+
+--> Kafka Offset Explorer -> GUI for tracking the data -- https://kafkatool.com/
+
+STEPS TO START THE KAFKA:
+
+Producer and Consumer Flow --
+
+1) Start Zookeeper
+2) Start Kafka Server
+3) Create Topic
+
+-----------------------------------------------------------------------------
+1) Starting the Zookeeper -> Rename the folder to Kafka -> Place in the C dir --> Default port : 2181
+
+C:\kafka>.\bin\windows\zookeeper-server-start.bat .\config\zookeeper.properties
+
+----------------------------------------------------------------------------
+
+2) Starting the Kafka Server --> Default port : 9092
+
+C:\kafka>.\bin\windows\kafka-server-start.bat .\config\server.properties
+
+-----------------------------------------------------------------------------
+
+3) Create the topic
+
+C:\kafka>.\bin\windows\kafka-topics.bat --bootstrap-server localhost:9092 --create --topic testtopic --partitions 3 --replication-factor 1
+
+list of topics : C:\kafka>.\bin\windows\kafka-topics.bat --bootstrap-server localhost:9092 --list
+Describe the topic : C:\kafka>.\bin\windows\kafka-topics.bat --bootstrap-server localhost:9092 --describe --topic testtopic
+
+----------------------------------------------------------------------------
+
+Open the Offset explorer:
+
+1) Need to create connection --> Need to give the zookeeper host and port
+
+----------------------------------------------------------------------------------
+
+4) Start the Producer
+
+C:\kafka>.\bin\windows\kafka-console-producer.bat --broker-list localhost:9092 --topic testtopic
+
+> Add the messages -> You can see in the consumer and offset explorer
+
+----------------------------------------------------------------------------------
+
+5) Start the consumer
+
+C:\kafka>.\bin\windows\kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic testtopic --from-beginning 
+
+--> You can see the messages whatever you posted in the cmd of producer
