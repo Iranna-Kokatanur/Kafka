@@ -1,0 +1,17 @@
+Kafka using Kraft ( Inside config folder of Kafka)
+
+1) Generate the random uuid
+
+C:\kafka>.\bin\windows\kafka-storage.bat random-uuid
+LP3JZy1jT9CEmBu1vrJGEw
+
+change the log file in server.properties
+
+C:\kafka>.\bin\windows\kafka-storage.bat format -t LP3JZy1jT9CEmBu1vrJGEw -c .\config\kraft\server.properties
+Formatting /tmp/kraft-combined-logs with metadata.version 3.5-IV2.
+
+change the log directory if you want
+
+2) Start the Kafka broker/server
+
+C:\kafka>.\bin\windows\kafka-server-start.bat .\config\kraft\server.properties
