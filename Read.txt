@@ -1,1 +1,16 @@
 KAFKA TUTORIALS
+
+PRODUCER -> MESSAGE BROKER -> CONSUMER
+
+KAFKA COMPONENTS:
+
+1) Producer
+2) Consumer
+3) Broker  --> Kafka server
+4) Cluster ---> group of kafka brokers
+5) Topic   ---> It specify the category of the message or classfication of the message.
+6) Partitions --> splitting the topic to the partitions, if any partition goes off, other will work.
+7) Offset --> we will give the indices to the message in partions. It will keep the track, what message been sent and what not.
+8) Consumer Groups --> Group of consumer to achieve the better output.
+9) Zookeeper --> It will keep track of topic, offset, broker everything.
+
