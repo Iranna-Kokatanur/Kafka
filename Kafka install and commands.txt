@@ -55,3 +55,11 @@ C:\kafka>.\bin\windows\kafka-console-producer.bat --broker-list localhost:9092 -
 C:\kafka>.\bin\windows\kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic testtopic --from-beginning 
 
 --> You can see the messages whatever you posted in the cmd of producer
+
+consume List:
+
+.\bin\windows\kafka-consumer-groups.bat --list --bootstrap-server localhost:9092
+
+describe the consumer groups:
+
+.\bin\windows\kafka-consumer-groups.bat --bootstrap-server localhost:9092 --describe --group <consumer group>
