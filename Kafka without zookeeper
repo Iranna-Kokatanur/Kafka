@@ -15,3 +15,10 @@ change the log directory if you want
 2) Start the Kafka broker/server
 
 C:\kafka>.\bin\windows\kafka-server-start.bat .\config\kraft\server.properties
+
+
+
+--------
+IN WINDOWS IT MIGHT GIVE ERROR -> like C:\data\kraft-combined-logs\__cluster_metadata-0\quorum-state.tmp -> C:\data\kraft-combined-logs\__cluster_metadata-0\quorum-state: The process cannot access the file because it is being used by another process.
+
+USE WSL2 or SWITCH TO OTHER OS
